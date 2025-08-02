@@ -1,0 +1,2 @@
+LISP File name: BULKPASTE
+Command: BULKPASTE
