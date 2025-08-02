@@ -1,0 +1,65 @@
+AutoCAD LISP Routine: BULKPASTE - User Guide
+
+1. Overview
+
+BULKPASTE is an AutoCAD LISP routine designed to automate the placement of multiple DXF and DWG files as blocks within the current drawing. This routine streamlines the workflow by allowing the user to specify a source folder, define the spacing between blocks, select an alignment direction, and set the size of text annotations.
+
+2. Loading the Routine
+
+To utilize the BULKPASTE command, the LISP file must first be loaded into the AutoCAD session.
+
+    Copy the provided LISP code into a text editor and save it as a file with the .lsp extension (e.g., bulkpaste.lsp).
+
+    Launch the AutoCAD application.
+
+    Type APPLOAD in the command line and press Enter.
+
+    In the "Load/Unload Applications" dialog box, navigate to the location where you saved the bulkpaste.lsp file.
+
+    Select the file and click the Load button.
+
+    Click the Close button to complete the process.
+
+Following these steps, the command will be ready for use. A message will appear on the command line: Type BULKPASTE to start the command.
+
+3. Using the Command
+
+    Type BULKPASTE in the command line and press Enter.
+
+    A folder selection dialog box will appear, prompting you to "Please select the folder containing DXF/DWG files.". Select the folder where your files are located and click OK.
+
+    The command line will then sequentially prompt you for three parameters:
+
+        Spacing: Enter a numerical value for the distance between each inserted block (e.g., 50). This value will determine the placement interval of the blocks.
+
+        Alignment: You will be prompted to select an alignment direction. Type either Horizontal or Vertical and press Enter.
+
+            Horizontal: Places the blocks side-by-side along the X-axis.
+
+            Vertical: Stacks the blocks one on top of the other along the Y-axis.
+
+        Text Height: Enter the desired height for the text annotation to be added with each block (e.g., 3.5).
+
+    After all parameters are entered, the routine will begin processing the files in the specified folder.
+
+    Each file will be inserted as a block at the designated insertion point, and its file name will be added as a text annotation below the block (for horizontal alignment) or to the left of the block (for vertical alignment).
+
+    Upon completion, the command line will display the message: Operation completed.
+
+4. Command Parameters
+
+    Spacing: A real number defining the spacing between blocks in drawing units.
+
+    Alignment: A keyword, either Horizontal or Vertical, that controls the layout of the inserted blocks.
+
+    Text Height: A real number specifying the height of the text labels that will be added for each block.
+
+5. Important Notes
+
+    The routine automatically detects and processes both .dxf and .dwg files from the selected folder.
+
+    The text annotations for blocks are right-justified when aligned vertically and center-justified when aligned horizontally to ensure a neat and organized layout.
+
+    If the selected folder does not contain any files in the appropriate format, the routine will display a warning message and terminate.
+
+    Entering an invalid value for a parameter (e.g., text instead of a number) will cause the command to be canceled. The command will need to be restarted in this case.
